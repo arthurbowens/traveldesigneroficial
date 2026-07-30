@@ -125,6 +125,48 @@ body.menu-locked {
   animation: fade-up 0.8s 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.whatsapp-float__btn {
+  box-shadow:
+    0 10px 28px rgba(37, 211, 102, 0.45),
+    0 4px 12px rgba(7, 31, 46, 0.18);
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.whatsapp-float:hover .whatsapp-float__btn {
+  transform: scale(1.06);
+  background-color: #20bd5a;
+  box-shadow:
+    0 14px 32px rgba(37, 211, 102, 0.5),
+    0 6px 16px rgba(7, 31, 46, 0.2);
+}
+
+.whatsapp-float__pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: #25d366;
+  animation: whatsapp-pulse 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  z-index: 0;
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
 .mobile-nav-panel {
   animation: slide-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
