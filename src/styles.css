@@ -1,3 +1,157 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import "tailwindcss";
+
+@theme {
+  /* Paleta agência de viagens — oceano + ouro suave */
+  --color-ocean: #0b2f45;
+  --color-ocean-deep: #071f2e;
+  --color-ocean-mid: #164a63;
+  --color-azure: #2f8a9b;
+  --color-gold: #c9a46a;
+  --color-foam: #eef5f7;
+  --color-ink: #132f3d;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-foam);
+  -webkit-font-smoothing: antialiased;
+}
+
+body.menu-locked {
+  overflow: hidden;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-azure) 28%, white);
+  color: var(--color-ocean-deep);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes draw-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+}
+
+.hero-media {
+  animation: ken-burns 18s ease-out forwards;
+}
+
+.badge-line::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 3.5rem;
+  margin-top: 1.25rem;
+  background: var(--color-gold);
+  transform-origin: left;
+  animation: draw-line 1s 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.gallery-item {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery-item:hover {
+  transform: translateY(-0.4rem);
+}
+
+.gallery-item img {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.whatsapp-float {
+  animation: fade-up 0.8s 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.mobile-nav-panel {
+  animation: slide-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  color: var(--color-azure);
+  background: color-mix(in srgb, var(--color-azure) 10%, white);
+  border: 1px solid color-mix(in srgb, var(--color-azure) 22%, transparent);
+}
+
+.icon-inline {
+  display: inline-flex;
+  color: var(--color-azure);
+  font-size: 1.15rem;
+}
+
+.icon-check {
+  display: inline-flex;
+  color: var(--color-gold);
+  font-size: 1.1rem;
+}
+
+details summary {
+  font-family: var(--font-sans);
+}
