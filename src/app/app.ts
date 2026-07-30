@@ -12,10 +12,9 @@ export class App {
   readonly year = new Date().getFullYear();
   readonly menuOpen = signal(false);
 
-  /** Substitua pelo número real com DDI (ex: 5561999999999) */
-  readonly whatsappNumber = '5561999999999';
+  readonly whatsappNumber = '556192171051';
   readonly whatsappMessage =
-    'Olá Renata! Quero planejar minha viagem personalizada.';
+    'Olá Renata! Vim pelo site e quero planejar minha viagem personalizada.';
 
   constructor() {
     effect(() => {
